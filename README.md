@@ -1,6 +1,6 @@
-# Real-Time Gallery Interaction App
+# Real-Time Gallery Interaction App 
 
-A premium, real-time "Canvas-First" image gallery built with React, Vite, Tailwind CSS v4, and InstantDB.
+A premium, real-time "Canvas-First" image gallery built with React, Vite, Tailwind CSS v4, and InstantDB (helps in solving distributed state synchronization problem).
 
 **Deployed Link**: [click here](https://gallery-repo-green.vercel.app/)
 

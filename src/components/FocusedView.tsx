@@ -44,35 +44,35 @@ export default function FocusedView() {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md animate-fadeIn" onClick={close}>
+        <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md animate-fadeIn overflow-y-auto lg:overflow-hidden no-scrollbar" onClick={close}>
 
-            {/* Close Button - Floating Fixed */}
-            <button onClick={close} className="absolute top-6 right-6 z-[60] p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors backdrop-blur-xl">
+            {/* Close Button - Switch to fixed positioning relative to viewport for scrollable mobile view */}
+            <button onClick={close} className="fixed top-6 right-6 z-[110] p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors backdrop-blur-xl">
                 <X size={24} />
             </button>
 
-            <div className="w-full h-full flex flex-col md:flex-row max-w-[1920px] mx-auto overflow-hidden" onClick={e => e.stopPropagation()}>
+            <div className="w-full min-h-full lg:h-full flex flex-col lg:flex-row max-w-[1920px] mx-auto" onClick={e => e.stopPropagation()}>
 
                 {/* Left: Immersive Image Stage */}
-                <div className="flex-1 md:h-full bg-black flex items-center justify-center relative p-4 md:p-10">
+                <div className="w-full lg:flex-1 lg:h-full bg-black flex items-center justify-center relative p-4 lg:p-10 shrink-0">
                     <img
                         src={image.url}
                         alt={image.altDescription}
-                        className="max-w-full max-h-full object-contain shadow-2xl drop-shadow-[0_0_50px_rgba(255,255,255,0.1)] rounded-sm"
+                        className="w-auto h-auto max-h-[60vh] lg:max-w-full lg:max-h-full object-contain shadow-2xl drop-shadow-[0_0_50px_rgba(255,255,255,0.1)] rounded-sm"
                     />
                 </div>
 
                 {/* Right: Interaction Sidebar (Glass) */}
-                <div className="h-[40vh] md:h-full w-full md:w-[450px] flex flex-col bg-gray-900/50 backdrop-blur-2xl border-t md:border-t-0 md:border-l border-white/5">
+                <div className="w-full lg:w-[450px] lg:h-full flex flex-col bg-gray-900/50 backdrop-blur-2xl border-t lg:border-t-0 lg:border-l border-white/5 shrink-0">
 
                     {/* Header */}
-                    <div className="p-6 border-b border-white/5 bg-white/5">
+                    <div className="p-6 border-b border-white/5 bg-white/5 sticky top-0 z-10 backdrop-blur-xl lg:static lg:bg-transparent lg:backdrop-blur-none">
                         <h3 className="font-semibold text-lg text-white tracking-wide">Discussion</h3>
                         <p className="text-xs text-white/40 mt-1 uppercase tracking-widest">Live Interactions</p>
                     </div>
 
-                    {/* List */}
-                    <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                    {/* List - Scroll naturally on mobile, internal scroll on desktop */}
+                    <div className="flex-1 p-6 space-y-6 overflow-visible lg:overflow-y-auto custom-scrollbar">
                         {sortedInteractions.map((msg: any) => (
                             <div key={msg.id} className="flex gap-4 group items-start">
                                 {/* Avatar */}

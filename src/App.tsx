@@ -4,7 +4,7 @@ import Feed from "./components/Feed";
 import FocusedView from "./components/FocusedView";
 import { useStore, generateRandomUser } from "./lib/store";
 import { seedImages } from "./services/unsplash";
-import { Activity, RefreshCw, Zap } from "lucide-react";
+import { Activity, RefreshCw, Aperture } from "lucide-react";
 
 function App() {
   const { user, setUser, setIsFeedOpen } = useStore();
@@ -28,11 +28,16 @@ function App() {
       {/* Floating Header */}
       <header className="fixed top-0 inset-x-0 z-40 p-6 pointer-events-none flex justify-between items-start">
         {/* Brand */}
-        <div className="pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full flex items-center gap-3 shadow-2xl">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-white to-gray-400 flex items-center justify-center shadow-lg shadow-white/10">
-            <Zap size={16} className="text-black fill-current" />
+        {/* Brand */}
+        <div className="pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 px-6 py-2.5 rounded-full flex items-center gap-4 shadow-2xl group transition-all hover:bg-white/5 hover:border-white/20 hover:scale-105 cursor-default">
+          <div className="relative w-6 h-6 flex items-center justify-center">
+            <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse blur-md"></div>
+            <Aperture size={20} className="relative z-10 text-white group-hover:rotate-180 transition-transform duration-700 ease-in-out" strokeWidth={1.5} />
           </div>
-          <h1 className="text-sm font-semibold tracking-wide text-white/90">Gallery</h1>
+          <div className="flex flex-col">
+            <h1 className="text-sm font-bold tracking-[0.3em] text-white leading-none">LUMA</h1>
+            <span className="text-[10px] text-white/40 tracking-widest font-light leading-none mt-1">GALLERY</span>
+          </div>
         </div>
 
         {/* Right Controls */}

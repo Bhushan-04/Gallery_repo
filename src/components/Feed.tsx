@@ -45,7 +45,7 @@ export default function Feed() {
                 </div>
 
                 {/* List */}
-                <div className="h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-4 pb-20">
+                <div className="h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-4 pb-20 custom-scrollbar">
                     {isLoading && <div className="text-white/50 text-center py-10">Syncing activity...</div>}
                     {error && <div className="text-red-400 p-4">Error: {error.message}</div>}
 

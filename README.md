@@ -120,9 +120,8 @@ const schema = i.schema({
 
 ## Improvements (With More Time)
 
-1.  **Virtualization**: For a gallery with 1000+ items, I would implement `react-virtualized` or `tanstack-virtual` to DOM-recycle off-screen nodes.
-2.  **Optimized Images**: Implement `Next.js`-style image optimization (lazy loading, blur-up placeholders) manually or via Cloudinary, as loading raw Unsplash URLs can be bandwidth-heavy.
-3.  **Auth Integration**: Replace the random user generator with Clerk or Firebase Auth for secure, cross-device profiles.
+1.  **Optimized Images**: Implement `Next.js`-style image optimization (lazy loading, blur-up placeholders) manually or via Cloudinary, as loading raw Unsplash URLs can be bandwidth-heavy.
+2.  **Auth Integration**: Replace the random user generator with Clerk or Firebase Auth for secure, cross-device profiles.
 
 ---
 Built by @Bhushan-04

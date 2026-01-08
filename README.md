@@ -2,7 +2,7 @@
 
 A premium, real-time "Canvas-First" image gallery built with React, Vite, Tailwind CSS v4, and InstantDB.
 
-**Deployed Link**: [Click Here](https://gallery-task-ten.vercel.app/)
+**Deployed Link**: [Click Here](https://gallery-repo-green.vercel.app/)
 
 ## Key Features
 
